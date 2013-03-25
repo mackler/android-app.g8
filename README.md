@@ -1,3 +1,5 @@
+A little different from jberkel's original, tweaked to my preferences.
+
 # Android App in Scala
 
 [giter8](http://github.com/n8han/giter8) template to get an Android
