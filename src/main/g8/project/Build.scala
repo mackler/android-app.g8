@@ -9,11 +9,16 @@ object General {
     version := "0.1",
     versionCode := 0,
     scalaVersion := "$scala_version$",
-    platformName in Android := "android-$api_level$"
+    platformName in Android := "android-$api_level$",
+    scalacOptions in Compile ++= Seq("-deprecation","-feature","-language:implicitConversions","-unchecked"),
+    javaOptions in Compile += "-Dscalac.patmat.analysisBudget=off",
+    initialize ~= { _ ⇒
+      sys.props("scalac.patmat.analysisBudget") = "512"
   )
 
   val proguardSettings = Seq (
-    useProguard in Android := $useProguard$
+    useProguard in Android := $useProguard$,
+    proguardOption in Android := "@project/proguard.cfg"
   )
 
   lazy val fullAndroidSettings =
@@ -24,7 +29,9 @@ object General {
     AndroidManifestGenerator.settings ++
     AndroidMarketPublish.settings ++ Seq (
       keyalias in Android := "change-me",
-      libraryDependencies += "org.scalatest" %% "scalatest" % "$scalatest_version$" % "test"
+      libraryDependencies ++= Seq(
+        "org.scalatest" %% "scalatest" % "$scalatest_version$" % "test"
+      )
     )
 }
 
