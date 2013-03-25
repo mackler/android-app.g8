@@ -14,6 +14,7 @@ object General {
     javaOptions in Compile += "-Dscalac.patmat.analysisBudget=off",
     initialize ~= { _ ⇒
       sys.props("scalac.patmat.analysisBudget") = "512"
+    }
   )
 
   val proguardSettings = Seq (
