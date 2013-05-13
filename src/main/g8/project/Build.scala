@@ -31,7 +31,8 @@ object General {
     AndroidMarketPublish.settings ++ Seq (
       keyalias in Android := "change-me",
       libraryDependencies ++= Seq(
-        "org.scalatest" %% "scalatest" % "$scalatest_version$" % "test"
+        "org.scalatest" %% "scalatest"     % "$scalatest_version$" % "test",
+        "org.slf4j"      % "slf4j-android" % "1.6.1-RC1"
       )
     )
 }
