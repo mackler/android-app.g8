@@ -8,6 +8,6 @@ class $main_activity$ extends Activity with TypedActivity {
     super.onCreate(bundle)
     setContentView(R.layout.main)
 
-    findView(TR.textview).setText("hello, world!")
+    findView(TR.textview).setText("Hello, this is the $name$ application.")
   }
 }
