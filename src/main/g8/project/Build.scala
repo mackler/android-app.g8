@@ -39,14 +39,14 @@ object General {
 
 object AndroidBuild extends Build {
   lazy val main = Project (
-    "$name$",
-    file("."),
+    id = "$name$",
+    base = file("."),
     settings = General.fullAndroidSettings
   )
 
   lazy val tests = Project (
-    "tests",
-    file("tests"),
+    id = "tests",
+    base = file("tests"),
     settings = General.settings ++
                AndroidTest.androidSettings ++
                General.proguardSettings ++ Seq (
