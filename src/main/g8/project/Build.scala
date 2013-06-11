@@ -1,7 +1,7 @@
 import sbt._
 
 import Keys._
-import AndroidKeys._
+import sbtandroid.AndroidKeys._
 
 object General {
   val settings = Defaults.defaultSettings ++ Seq (
@@ -24,11 +24,11 @@ object General {
 
   lazy val fullAndroidSettings =
     General.settings ++
-    AndroidProject.androidSettings ++
-    TypedResources.settings ++
+    sbtandroid.AndroidProject.androidSettings ++
+    sbtandroid.TypedResources.settings ++
     proguardSettings ++
-    AndroidManifestGenerator.settings ++
-    AndroidMarketPublish.settings ++ Seq (
+    sbtandroid.AndroidManifestGenerator.settings ++
+    sbtandroid.AndroidMarketPublish.settings ++ Seq (
       keyalias in Android := "change-me",
       libraryDependencies ++= Seq(
         "org.scalatest" %% "scalatest"     % "$scalatest_version$" % "test",
