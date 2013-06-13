@@ -48,7 +48,7 @@ object AndroidBuild extends Build {
     id = "tests",
     base = file("tests"),
     settings = General.settings ++
-               AndroidTest.androidSettings ++
+               sbtandroid.AndroidTest.androidSettings ++
                General.proguardSettings ++ Seq (
       name := "$name$Tests"
     )
