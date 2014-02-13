@@ -13,7 +13,7 @@ object AndroidBuild extends Build {
     version := "0.1",
     versionCode := 0,
     scalaVersion := "$scala_version$",
-    platformName := "android-$api_level$"",
+    platformName := "android-$api_level$",
     useProguard := $useProguard$,
     proguardOptions += "@project/proguard.cfg",
     keyalias := "change-me",
