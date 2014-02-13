@@ -1,6 +1,11 @@
-A little different from jberkel's original, defaults are tweaked to my preferences.
+[Documentation for jberkel's original (from which this is forked) is here.](https://github.com/jberkel/android-app.g8/blob/master/README.md)
 
-- Default scala version 2.10.1
+[A tutorial for the sbt-android plugin is here.](http://fxthomas.github.io/android-plugin/)
+
+This is a little different from the original, with defaults tweaked to my preferences.  Differences include, but are not limited to:
+
+- Uses sbt-android plugin version 0.7
+- Default scala version 2.10.3
 - Default Android platform is 15
 - Default scalac compiler options are:
   - `-deprecation`
@@ -10,7 +15,7 @@ A little different from jberkel's original, defaults are tweaked to my preferenc
 - Default javac compiler options is `-Dscalac.patmat.analysisBudget=off`
 - System property `scalac.patmat.analysisBudget` is set to `512`
 - Default Proguard settings:
-  - Praguard is configured to read its configuration from file named `project/proguard.cfg`
+  - Proguard is configured to read its configuration from file named `project/proguard.cfg`
   - The `project/proguard.cfg` file includes my current idea of an approprate set of defaults,
     in the optimality of which at this time of writing I have rather little confidence.
 - By default the `sbt` plugin `ensime-sbt-cmd` is activated (version 0.1.0)
@@ -29,7 +34,7 @@ All done? Now fire up your favorite shell and enter
 
     g8 mackler/android-app
     cd <name-of-app>
-    sbt android:package-debug
+    sbt start
 
 ## What you get
 
