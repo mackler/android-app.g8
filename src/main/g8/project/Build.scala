@@ -18,6 +18,8 @@ object AndroidBuild extends Build {
     proguardOptions += "@project/proguard.cfg",
     keyalias := "change-me",
     libraryDependencies ++= Seq(
+      // uncomment for support library; will increase apk size, require proguard reconfig
+      //  aarlib("com.android.support" % "appcompat-v7" % "18.0.0"),
       "org.scalatest" %% "scalatest"     % "$scalatest_version$" % "test",
       "org.slf4j"      % "slf4j-android" % "1.7.6"
     ),
